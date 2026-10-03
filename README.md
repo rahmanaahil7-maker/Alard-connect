@@ -34,5 +34,5 @@ The backend routing engine is built on robust graph theory implementation, utili
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/alard-connect.git](https://github.com/YOUR_USERNAME/alard-connect.git)
+   git clone [https://github.com/YOUR_USERNAME/Alard-connect.git](https://github.com/YOUR_USERNAME/Alard-connect.git)
    cd alard-connect
