@@ -1,0 +1,29 @@
+{
+  "events": [
+    {
+      "name": "Cybersecurity Seminar", 
+      "location": "Seminar Hall", 
+      "time": "10:00 AM"
+    },
+    {
+      "name": "Coding Competition", 
+      "location": "CSE Lab", 
+      "time": "11:00 AM"
+    },
+    {
+      "name": "Annual Tech Symposium", 
+      "location": "Auditorium", 
+      "time": "02:00 PM"
+    },
+    {
+      "name": "Creative Art Exhibition", 
+      "location": "Alard School of Design", 
+      "time": "10:30 AM"
+    },
+    {
+      "name": "Pharma Expo 2026", 
+      "location": "Alard College of Pharmacy", 
+      "time": "11:00 AM"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alard Connect | Events</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+            <img src="/image_2d5995.png" alt="Alard Logo" style="width: 100%; max-width: 200px; object-fit: contain;">
+            <span style="font-size: 1.25rem; margin-top: 0.5rem; color: var(--primary); font-weight: 700;">Alard Connect</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="navigation.html"><i class="fa-solid fa-route"></i> Navigate</a>
+            <a href="events.html" class="active"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Upcoming Events</h1>
+            <p>Select your current location, then click [ Navigate ] to route directly to an event.</p>
+        </header>
+
+        <div class="card" style="margin-bottom: 2rem; max-width: 400px; background: #e0e7ff; border-color: var(--primary);">
+            <div class="input-group" style="margin-bottom: 0;">
+                <label style="color: var(--primary);">Your Current Location:</label>
+                <select id="event-origin">
+                    <option value="Main Gate">Main Gate</option>
+                    <option value="Central Library">Central Library</option>
+                    <option value="Campus Canteen">Campus Canteen</option>
+                    <option value="Alard College of Engineering">Alard College of Engineering</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid-2" id="events-container">
+            <!-- Events injected dynamically by script.js -->
+        </div>
+    </main>
+    <script src="/script.js"></script>
+</body>
+</html>

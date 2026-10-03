@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alard Connect | Route Setup</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+            <img src="/image_2d5995.png" alt="Alard Logo" style="width: 100%; max-width: 200px; object-fit: contain;">
+            <span style="font-size: 1.25rem; margin-top: 0.5rem; color: var(--primary); font-weight: 700;">Alard Connect</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="navigation.html" class="active"><i class="fa-solid fa-route"></i> Navigate</a>
+            <a href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header"><h1>Location Search & Routing</h1></header>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Find Route</h3><br>
+                <form id="routeForm">
+                    <datalist id="campus-locations"></datalist>
+                    <div class="input-group">
+                        <label>Search Origin</label>
+                        <input type="text" id="source" list="campus-locations" placeholder="Type location..." required>
+                    </div>
+                    <div class="input-group">
+                        <label>Search Destination</label>
+                        <input type="text" id="destination" list="campus-locations" placeholder="Type location..." required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Routing Preferences (Smart Weights)</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                            <label style="font-weight: 400;"><input type="checkbox" id="pref-wheelchair" value="wheelchair"> <i class="fa-solid fa-wheelchair"></i> Wheelchair accessible</label>
+                            <label style="font-weight: 400;"><input type="checkbox" id="pref-stairs" value="avoid_stairs"> <i class="fa-solid fa-stairs"></i> Avoid stairs</label>
+                            <label style="font-weight: 400;"><input type="checkbox" id="pref-crowds" value="avoid_crowds"> <i class="fa-solid fa-users-slash"></i> Avoid crowded areas</label>
+                            <label style="font-weight: 400;"><input type="checkbox" id="pref-covered" value="prefer_covered"> <i class="fa-solid fa-umbrella"></i> Prefer covered paths</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Algorithm Mode</label>
+                        <select id="algorithm">
+                            <option value="a_star">A* Search (Optimal & Fast)</option>
+                            <option value="dijkstra">Dijkstra (Shortest Distance)</option>
+                            <option value="bfs">BFS (Fewest Stops)</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn" onclick="calculateRoute()">Generate Route</button>
+                </form>
+            </div>
+            
+            <div class="card" style="border: 2px solid #ef4444;">
+                <h3 style="color: #ef4444;"><i class="fa-solid fa-traffic-cone"></i> Admin: Block Road</h3><br>
+                <div class="input-group">
+                    <label>Node A</label><input type="text" id="blockA" list="campus-locations">
+                </div>
+                <div class="input-group">
+                    <label>Node B</label><input type="text" id="blockB" list="campus-locations">
+                </div>
+                <button class="btn" style="background: #ef4444;" onclick="blockRoad()">Block Route</button>
+            </div>
+        </div>
+    </main>
+    <script src="/script.js"></script>
+</body>
+</html>

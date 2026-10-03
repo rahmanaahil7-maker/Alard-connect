@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alard Connect | Route Result</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+            <!-- Using your uploaded image name -->
+            <img src="/Alard%20Image.png" alt="Alard University Logo" style="width: 100%; max-width: 200px; height: auto; object-fit: contain;">
+            <span style="font-size: 1.25rem; margin-top: 0.5rem; color: var(--primary); font-weight: 700;">Alard Connect</span>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="navigation.html" class="active"><i class="fa-solid fa-route"></i> Navigate</a>
+            <a href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        </nav>
+
+        <div style="margin-top: auto; padding-top: 2rem; text-align: center; border-top: 1px solid var(--border);">
+            <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">System Developed By</p>
+            <p style="font-size: 0.9rem; color: var(--primary); font-weight: 700; margin-top: 0.25rem;">Atik Khan</p>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Alard University Student</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Route Details</h1>
+            <p id="route-summary">Loading...</p>
+        </header>
+        <div class="grid-2">
+            <div>
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>Academic Analysis</h3>
+                    <table class="data-table">
+                        <tr><th>Algorithm</th><th>Distance</th><th>Nodes Explored</th><th>Exec Time</th></tr>
+                        <tr><td>A* Search</td><td id="cmp-a-dist"></td><td id="cmp-a-nodes"></td><td id="cmp-a-time"></td></tr>
+                        <tr><td>Dijkstra</td><td id="cmp-d-dist"></td><td id="cmp-d-nodes"></td><td id="cmp-d-time"></td></tr>
+                        <tr><td>BFS</td><td id="cmp-b-dist"></td><td id="cmp-b-nodes"></td><td id="cmp-b-time"></td></tr>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem;">Alternative Routes</h3>
+                    <!-- Dynamically injected tabs -->
+                    <div class="route-tabs" id="route-tabs"></div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
+                        <div>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Total Distance</p>
+                            <h2 style="color: var(--primary);"><span id="total-distance">--</span></h2>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Walking Time</p>
+                            <h2 style="color: #059669;"><span id="walking-time">--</span></h2>
+                        </div>
+                    </div>
+                    <!-- Route Timeline -->
+                    <div id="path-container"></div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--border);">
+                    <h3 style="margin: 0;"><i class="fa-solid fa-network-wired"></i> Interactive Map</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Click any node for building information.</p>
+                </div>
+                <div id="campus-map"></div>
+                <div id="building-info" class="info-panel" style="margin: 1rem;">
+                    <strong id="b-name">Select a building</strong>
+                    <p id="b-desc" style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Interactive details will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/script.js"></script>
+</body>
+</html>

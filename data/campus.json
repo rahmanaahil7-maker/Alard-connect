@@ -1,0 +1,39 @@
+{
+  "nodes": {
+    "Main Gate": {"x": 0, "y": 0, "info": "Main entrance and security check at Alard Knowledge Park."},
+    "Alard Public School": {"x": 50, "y": 100, "info": "School campus located near the main entrance."},
+    "Alard High School and Junior College": {"x": 60, "y": -60, "info": "Higher secondary education and junior college facilities."},
+    "Alard Institute of Management": {"x": 150, "y": -20, "info": "AIMS - Business school and MBA administration."},
+    "Alard School of Design": {"x": 220, "y": -80, "info": "Creative arts, architecture, and design studios."},
+    "Central Library": {"x": 200, "y": 40, "info": "Main library serving all higher education institutes."},
+    "Alard College of Engineering": {"x": 300, "y": -40, "info": "ACEM - Engineering classrooms and core laboratories."},
+    "Alard College of Pharmacy": {"x": 320, "y": 80, "info": "ACP - Pharmacy labs, research centers, and classrooms."},
+    "Campus Canteen": {"x": 180, "y": 120, "info": "Central cafeteria serving students and staff."},
+    "Student Hostel": {"x": 300, "y": 180, "info": "On-campus residential dormitories for students."},
+    "Sports Ground": {"x": 100, "y": 200, "info": "Main open ground for sports and outdoor events."},
+    "Seminar Hall": {"x": 250, "y": 20, "info": "Main venue for guest lectures and seminars."},
+    "CSE Lab": {"x": 350, "y": -60, "info": "Computer Science practical lab."},
+    "Auditorium": {"x": 350, "y": -20, "info": "Large venue for annual days and competitions."}
+  },
+  "edges": [
+    {"source": "Main Gate", "target": "Alard Public School", "weight": 80, "has_stairs": false, "is_crowded": true, "is_covered": false},
+    {"source": "Main Gate", "target": "Alard High School and Junior College", "weight": 90, "has_stairs": false, "is_crowded": true, "is_covered": false},
+    {"source": "Main Gate", "target": "Alard Institute of Management", "weight": 160, "has_stairs": false, "is_crowded": false, "is_covered": true},
+    {"source": "Alard High School and Junior College", "target": "Alard Institute of Management", "weight": 110, "has_stairs": true, "is_crowded": false, "is_covered": true},
+    {"source": "Alard Institute of Management", "target": "Central Library", "weight": 70, "has_stairs": false, "is_crowded": true, "is_covered": true},
+    {"source": "Central Library", "target": "Alard School of Design", "weight": 90, "has_stairs": true, "is_crowded": false, "is_covered": true},
+    {"source": "Alard School of Design", "target": "Alard College of Engineering", "weight": 80, "has_stairs": true, "is_crowded": false, "is_covered": true},
+    {"source": "Alard Public School", "target": "Campus Canteen", "weight": 150, "has_stairs": false, "is_crowded": true, "is_covered": false},
+    {"source": "Alard Public School", "target": "Sports Ground", "weight": 130, "has_stairs": false, "is_crowded": true, "is_covered": false},
+    {"source": "Central Library", "target": "Alard College of Engineering", "weight": 110, "has_stairs": true, "is_crowded": true, "is_covered": true},
+    {"source": "Central Library", "target": "Alard College of Pharmacy", "weight": 130, "has_stairs": true, "is_crowded": false, "is_covered": true},
+    {"source": "Central Library", "target": "Campus Canteen", "weight": 90, "has_stairs": false, "is_crowded": true, "is_covered": false},
+    {"source": "Central Library", "target": "Seminar Hall", "weight": 50, "has_stairs": false, "is_crowded": false, "is_covered": true},
+    {"source": "Campus Canteen", "target": "Sports Ground", "weight": 110, "has_stairs": false, "is_crowded": true, "is_covered": false},
+    {"source": "Campus Canteen", "target": "Student Hostel", "weight": 160, "has_stairs": false, "is_crowded": false, "is_covered": false},
+    {"source": "Alard College of Engineering", "target": "Alard College of Pharmacy", "weight": 80, "has_stairs": true, "is_crowded": true, "is_covered": true},
+    {"source": "Alard College of Pharmacy", "target": "Student Hostel", "weight": 120, "has_stairs": true, "is_crowded": false, "is_covered": false},
+    {"source": "Alard College of Engineering", "target": "CSE Lab", "weight": 30, "has_stairs": true, "is_crowded": false, "is_covered": true},
+    {"source": "Alard College of Engineering", "target": "Auditorium", "weight": 60, "has_stairs": false, "is_crowded": true, "is_covered": true}
+  ]
+}
